@@ -116,7 +116,7 @@ def findFlights():
         print(f + ' to ' + t + ' on ' + d[:2] + ' of March')
         if f in TARGET_AIRPORTS:
             url = 'https://www.lot.com?departureAirport=' + f + '&destinationAirport=' + t + '&departureDate=' + d
-            notify(NOTIFICATION_SUBJECT_TEMPLATE.substitute(des=f), NOTIFICATION_MESSAGE_TEMPLATE.substitute(link=url))
+            notify(NOTIFICATION_SUBJECT_TEMPLATE.substitute(origin=f, des=t), NOTIFICATION_MESSAGE_TEMPLATE.substitute(link=url))
             TARGET_AIRPORTS.remove(f)
 
     print()
